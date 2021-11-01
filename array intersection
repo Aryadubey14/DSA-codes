@@ -6,24 +6,22 @@ Arr_result=[2]
 [1,1,2,2]
 [2,2,3]
 
-#include<bits/stdc++.h>
-using namespace std;
-vector<int>intersection (vector<int>arr1, vector<int> arr2)
-{
-	vector<int>result;
-	
+class Solution {
+public:
+    vector<int> intersection(vector<int>& nums1, vector<int>& nums2) {
+       vector<int>result;
+        sort(nums1.begin(),nums1.end());
+        sort(nums2.begin(),nums2.end());
+        for(int i=0;i<nums1.size();i++)
+        {
+            for(int j=0;j<nums2.size();j++)
+            {
+                if(nums1[i]==nums2[j])
+                    result.push_back(nums1[i]);
+            }
+        }
+       result.erase(unique(result.begin(),result.end()),result.end()); 
 
-	sort(arr1.begin(),arr1.end());
-	sort(arr2.begin(),arr2.end());
-	
-	for(int i=0;i<arr1.size();i++)
-	{
-		for(int j=0;j<arr2.size();j++)
-		{
-			if(arr1[i]==arr2[j])
-				result.push_back(arr[i]);
-		}
-	}
-res.erase(res.begin(),res.end(),res.end());
-return result;
-}
+        return result;
+    }
+};
