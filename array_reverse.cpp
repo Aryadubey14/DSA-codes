@@ -33,3 +33,28 @@ int main()
     
     
 }
+
+
+// alternative
+
+#include<iostream>
+using namespace std;
+void isSame( int arr[], int n)
+{
+bool result=true;
+for(int i=0;i<n;i++)
+{
+	if(arr[i]!=arr[n-i-1])
+	result=false;
+}
+if(result==false)
+cout<<"non-palindrome"<<endl;
+else
+cout<<"palindrome"<<endl;
+}
+int main()
+{
+int arr[]={};
+isSame(arr,5);
+return 0;
+}
